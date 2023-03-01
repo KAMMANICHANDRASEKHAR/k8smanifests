@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kammanideamonset
+  namespace: default
+  labels:
+    app: jawawebapp
+spec:
+  selector:
+    matchLabels:
+      app: jawawebapp
+  template:
+    metadata:
+      labels:
+        app: jawawebapp
+    spec:
+      containers:
+      - name: deamonsetc
+        image: nginx
